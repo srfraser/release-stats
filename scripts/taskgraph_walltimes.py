@@ -53,6 +53,7 @@ if __name__ == '__main__':
 
     with open('rundata1.csv', 'w') as csvfile:
         writer = csv.writer(csvfile)
+        writer.writerow(['taskid', 'provisionerid', 'workertype', 'scheduled_time', 'start_time', 'end_time', 'duration', 'delay'])
         for line in csvdata:
             writer.writerow(line)
 

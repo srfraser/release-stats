@@ -62,7 +62,8 @@ layout = {'xaxis':
               # 'type': 'log',
           },
           'paper_bgcolor': 'rgb(233,233,233)',
-          'plot_bgcolor': 'rgb(233,233,233)',
+          #'plot_bgcolor': 'rgb(233,233,233)',
+          'plot_bgcolor': 'rgb(255,255,255)',
           }
 
 # url_1 = plotly.offline.plot(data, filename='scatter-for-dashboard', auto_open=False)
@@ -73,4 +74,5 @@ for workertype in all_data:
     # layout['xaxis']['ticks'] = df.loc[df['workertype'] == workertype]['bin'].unique()
 
     plotly.offline.plot(go.Figure(data=all_data[workertype], layout=layout),
-                        filename='task-delays-by-date-{}.html'.format(workertype))
+                        filename='task-delays-by-date-{}.html'.format(workertype), 
+                        auto_open=False)
